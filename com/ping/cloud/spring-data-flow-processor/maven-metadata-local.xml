@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+  <groupId>com.ping.cloud</groupId>
+  <artifactId>spring-data-flow-processor</artifactId>
+  <versioning>
+    <versions>
+      <version>0.0.1-SNAPSHOT</version>
+    </versions>
+    <lastUpdated>20190513003140</lastUpdated>
+  </versioning>
+</metadata>
