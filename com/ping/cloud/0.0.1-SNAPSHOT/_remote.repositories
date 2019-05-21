@@ -1,0 +1,4 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Mon May 20 21:47:43 MDT 2019
+spring-data-flow-source-0.0.1-SNAPSHOT.jar>=
+spring-data-flow-source-0.0.1-SNAPSHOT.pom>=
