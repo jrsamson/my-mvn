@@ -1,0 +1,4 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Tue May 21 08:11:54 MDT 2019
+spring-data-flow-sink-0.0.4-SNAPSHOT.jar>=
+spring-data-flow-sink-0.0.4-SNAPSHOT.pom>=
