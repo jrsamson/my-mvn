@@ -1,0 +1,4 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Tue Jan 21 23:53:06 MST 2020
+ingest-1.0.0.BUILD-SNAPSHOT.jar>=
+ingest-1.0.0.BUILD-SNAPSHOT.pom>=

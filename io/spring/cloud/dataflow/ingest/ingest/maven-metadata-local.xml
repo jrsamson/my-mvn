@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+  <groupId>io.spring.cloud.dataflow.ingest</groupId>
+  <artifactId>ingest</artifactId>
+  <versioning>
+    <versions>
+      <version>1.0.0.BUILD-SNAPSHOT</version>
+    </versions>
+    <lastUpdated>20200122065306</lastUpdated>
+  </versioning>
+</metadata>
