@@ -12,7 +12,7 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.2.2.BUILD-SNAPSHOT</version>
+		<version>2.2.2.RELEASE</version>
 		<relativePath />
 	</parent>
 
@@ -26,10 +26,26 @@
 			<dependency>
 				<groupId>org.springframework.cloud</groupId>
 				<artifactId>spring-cloud-task-dependencies</artifactId>
-				<version>2.3.0.BUILD-SNAPSHOT</version>
+				<version>2.3.0.BUILD-SNAPSHOT </version>
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>
+
+			<dependency>
+				<groupId>io.pivotal.spring.cloud</groupId>
+				<artifactId>spring-cloud-services-dependencies</artifactId>
+				<version>2.1.2.RELEASE</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-dependencies</artifactId>
+				<version>Greenwich.RELEASE</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+
 		</dependencies>
 	</dependencyManagement>
 
@@ -47,6 +63,15 @@
 		<dependency>
 			<groupId>org.springframework.batch</groupId>
 			<artifactId>spring-batch-integration</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-cloud-connectors</artifactId>
 		</dependency>
 
 		<dependency>
@@ -83,6 +108,10 @@
 		</dependency>
 	</dependencies>
 
+
+
+<!--
+
 	<build>
 		<plugins>
 			<plugin>
@@ -116,7 +145,7 @@
 				</executions>
 			</plugin>
 			<plugin>
-				<!--skip deploy (this is just a test module) -->
+				skip deploy (this is just a test module)
 				<artifactId>maven-deploy-plugin</artifactId>
 				<configuration>
 					<skip>true</skip>
@@ -124,7 +153,9 @@
 			</plugin>
 		</plugins>
 	</build>
+	-->
 
+	<!--
 	<profiles>
 		<profile>
 			<id>integrationTests</id>
@@ -164,6 +195,19 @@
 			</build>
 		</profile>
 	</profiles>
+	-->
+
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+
+
 
 	<repositories>
 		<repository>
