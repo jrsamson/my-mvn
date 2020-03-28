@@ -1,0 +1,6 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Sat Mar 28 09:00:36 MDT 2020
+partitioned-batch-job-2.3.0.BUILD-SNAPSHOT-sources.jar>=
+partitioned-batch-job-2.3.0.BUILD-SNAPSHOT.jar>=
+partitioned-batch-job-2.3.0.BUILD-SNAPSHOT-javadoc.jar>=
+partitioned-batch-job-2.3.0.BUILD-SNAPSHOT.pom>=

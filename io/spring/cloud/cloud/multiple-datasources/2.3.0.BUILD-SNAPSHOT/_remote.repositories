@@ -1,0 +1,6 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Wed Jan 22 01:22:33 MST 2020
+multiple-datasources-2.3.0.BUILD-SNAPSHOT-sources.jar>=
+multiple-datasources-2.3.0.BUILD-SNAPSHOT.pom>=
+multiple-datasources-2.3.0.BUILD-SNAPSHOT-javadoc.jar>=
+multiple-datasources-2.3.0.BUILD-SNAPSHOT.jar>=

@@ -1,0 +1,6 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Wed Jan 22 23:26:27 MST 2020
+batch-job-2.2.0.BUILD-SNAPSHOT-sources.jar>=
+batch-job-2.2.0.BUILD-SNAPSHOT.jar>=
+batch-job-2.2.0.BUILD-SNAPSHOT-javadoc.jar>=
+batch-job-2.2.0.BUILD-SNAPSHOT.pom>=

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+  <groupId>io.spring.cloud</groupId>
+  <artifactId>partitioned-batch-job</artifactId>
+  <versioning>
+    <versions>
+      <version>2.3.0.BUILD-SNAPSHOT</version>
+    </versions>
+    <lastUpdated>20200328150036</lastUpdated>
+  </versioning>
+</metadata>
