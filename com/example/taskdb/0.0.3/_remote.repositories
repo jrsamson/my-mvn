@@ -1,0 +1,4 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Mon Apr 06 13:44:44 MDT 2020
+taskdb-0.0.3.jar>=
+taskdb-0.0.3.pom>=
