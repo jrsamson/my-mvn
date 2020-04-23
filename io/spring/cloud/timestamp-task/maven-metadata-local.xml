@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+  <groupId>io.spring.cloud</groupId>
+  <artifactId>timestamp-task</artifactId>
+  <versioning>
+    <versions>
+      <version>3.0.0.BUILD-SNAPSHOT</version>
+    </versions>
+    <lastUpdated>20200423223448</lastUpdated>
+  </versioning>
+</metadata>
