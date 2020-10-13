@@ -1,0 +1,7 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Tue Oct 13 09:44:55 MDT 2020
+mytimestamp-2.1.2.BUILD-SNAPSHOT-metadata.jar>=
+mytimestamp-2.1.2.BUILD-SNAPSHOT-javadoc.jar>=
+mytimestamp-2.1.2.BUILD-SNAPSHOT.jar>=
+mytimestamp-2.1.2.BUILD-SNAPSHOT-sources.jar>=
+mytimestamp-2.1.2.BUILD-SNAPSHOT.pom>=
