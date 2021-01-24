@@ -1,0 +1,372 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.3.1.RELEASE</version>
+		<relativePath/> <!-- lookup parent from repository -->
+	</parent>
+	<groupId>com.ping.cloud</groupId>
+	<artifactId>xml-to-json-cfenv</artifactId>
+	<version>0.0.5-SNAPSHOT</version>
+	<name>xml-to-json-cfenv</name>
+	<description>Spring Cloud Stream application</description>
+
+	<properties>
+		<java.version>1.8</java.version>
+		<spring-cloud-dependencies.version>Hoxton.SR4</spring-cloud-dependencies.version>
+
+		<git-commit-id-plugin.skip>false</git-commit-id-plugin.skip>
+		<jacoco.version>0.8.3</jacoco.version>
+		<skipTests>false</skipTests>
+		<skipTests.pmd>false</skipTests.pmd>
+		<skipTests.checkstyle>false</skipTests.checkstyle>
+		<skipTests.findbugs>false</skipTests.findbugs>
+		<sonar.java.coveragePlugin>jacoco</sonar.java.coveragePlugin>
+		<sonar.jacoco.reportPaths>${project.basedir}/target/jacoco.exec</sonar.jacoco.reportPaths>
+		<sonar.jacoco.reportPath>${project.basedir}/target/jacoco.exec</sonar.jacoco.reportPath>
+		<sonar.jacoco.itReportPath>${project.basedir}/target/jacoco-it.exec</sonar.jacoco.itReportPath>
+		<sonar.sourceEncoding>UTF-8</sonar.sourceEncoding>
+
+		<!--Sonar coverage exclusions todo -->
+		<sonar.exclusions>src/main/java/com/schwab/cloudops/cirrus/xmltojsonsource/XmlToJsonSourceApplication.java</sonar.exclusions>
+	</properties>
+
+	<dependencies>
+		<!-- Spring Boot -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>2.4</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/io.pivotal.cfenv/java-cfenv-boot -->
+		<dependency>
+			<groupId>io.pivotal.cfenv</groupId>
+			<artifactId>java-cfenv-boot</artifactId>
+			<version>2.1.2.RELEASE</version>
+		</dependency>
+
+
+
+		<!-- Spring Cloud Stream RabbitMQ -->
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-stream-rabbit</artifactId>
+			<version>1.3.0.RELEASE</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-dependencies</artifactId>
+				<version>${spring-cloud-dependencies.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+	<build>
+		<!-- Plugins -->
+		<plugins>
+
+			<!-- Maven Compiler Plugin -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.6.2</version>
+				<configuration>
+					<source>${java.version}</source>
+					<target>${java.version}</target>
+				</configuration>
+			</plugin>
+
+			<!-- Maven Release Plugin -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-release-plugin</artifactId>
+				<version>2.5.3</version>
+				<configuration>
+					<checkModificationExcludes>
+						<checkModificationExclude>pom.xml</checkModificationExclude>
+						<checkModificationExclude>.gitignore</checkModificationExclude>
+					</checkModificationExcludes>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+
+			<!-- scm plugin -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-scm-plugin</artifactId>
+				<version>1.11.2</version>
+			</plugin>
+
+			<!-- Defined so javadocs are skipped during mvn perform -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>3.0.0-M1</version>
+				<executions>
+					<execution>
+						<id>attach-javadocs</id>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+						<configuration>
+							<skip>true</skip>
+							<additionalparam>-Xdoclint:none</additionalparam>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+
+			<!-- PMD Plugin -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-pmd-plugin</artifactId>
+				<version>3.8</version>
+				<executions>
+					<execution>
+						<phase>test</phase>
+						<goals>
+							<goal>check</goal>
+						</goals>
+						<configuration>
+							<excludeFromFailureFile>${project.basedir}/config-build/exclude-pmd.properties</excludeFromFailureFile>
+							<skip>${skipTests.pmd}</skip>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+
+			<!-- Sonar Plugin -->
+			<plugin>
+				<groupId>org.sonarsource.scanner.maven</groupId>
+				<artifactId>sonar-maven-plugin</artifactId>
+				<version>3.6.0.1398</version>
+			</plugin>
+
+			<!-- Findbugs Plugin -->
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>findbugs-maven-plugin</artifactId>
+				<version>3.0.5</version>
+				<executions>
+					<execution>
+						<phase>test</phase>
+						<goals>
+							<goal>check</goal>
+						</goals>
+						<configuration>
+							<effort>Max</effort>
+							<threshold>Low</threshold>
+							<xmlOutput>true</xmlOutput>
+							<excludeFilterFile>${project.basedir}/config-build/findbugs_exclude.xml</excludeFilterFile>
+							<skip>${skipTests.findbugs}</skip>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+
+			<!-- Checkstyle plugin -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-checkstyle-plugin</artifactId>
+				<version>2.17</version>
+				<dependencies>
+					<dependency>
+						<groupId>com.puppycrawl.tools</groupId>
+						<artifactId>checkstyle</artifactId>
+						<version>7.5.1</version>
+					</dependency>
+				</dependencies>
+				<executions>
+					<execution>
+						<id>validate</id>
+						<phase>validate</phase>
+						<configuration>
+							<configLocation>${project.basedir}/config-build/checkstyle.xml</configLocation>
+							<encoding>UTF-8</encoding>
+							<consoleOutput>true</consoleOutput>
+							<failsOnError>false</failsOnError>
+							<failOnViolation>false</failOnViolation>
+							<violationSeverity>error</violationSeverity>
+							<skip>${skipTests.checkstyle}</skip>
+							<linkXRef>false</linkXRef>
+						</configuration>
+						<goals>
+							<goal>check</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+
+			<!-- Jacoco plugin -->
+			<plugin>
+				<groupId>org.jacoco</groupId>
+				<artifactId>jacoco-maven-plugin</artifactId>
+				<version>${jacoco.version}</version>
+				<configuration>
+					<excludes>
+
+					</excludes>
+				</configuration>
+				<executions>
+					<execution>
+						<id>prepare-ut-agent</id>
+						<goals>
+							<goal>prepare-agent</goal>
+						</goals>
+						<configuration>
+							<destFile>${sonar.jacoco.reportPaths}</destFile>
+							<skip>${skipTests}</skip>
+						</configuration>
+					</execution>
+					<execution>
+						<id>prepare-it-agent</id>
+						<phase>package</phase>
+						<goals>
+							<goal>prepare-agent-integration</goal>
+						</goals>
+						<configuration>
+							<destFile>${sonar.jacoco.itReportPath}</destFile>
+							<skip>${skipTests}</skip>
+						</configuration>
+					</execution>
+					<execution>
+						<id>report</id>
+						<phase>prepare-package</phase>
+						<goals>
+							<goal>report</goal>
+						</goals>
+						<configuration>
+							<dataFile>${sonar.jacoco.reportPaths}</dataFile>
+							<skip>${skipTests}</skip>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+
+			<!-- git commit Plugin -->
+			<plugin>
+				<groupId>pl.project13.maven</groupId>
+				<artifactId>git-commit-id-plugin</artifactId>
+				<version>2.2.6</version>
+				<executions>
+					<execution>
+						<id>default</id>
+						<goals>
+							<goal>revision</goal>
+						</goals>
+						<configuration>
+							<skip>${git-commit-id-plugin.skip}</skip>
+							<dotGitDirectory>${project.basedir}/../.git</dotGitDirectory>
+							<prefix>git</prefix>
+							<verbose>true</verbose>
+							<generateGitPropertiesFile>true</generateGitPropertiesFile>
+							<generateGitPropertiesFilename>${project.build.outputDirectory}/git.properties</generateGitPropertiesFilename>
+							<useNativeGit>false</useNativeGit>
+							<gitDescribe>
+								<skip>false</skip>
+								<always>false</always>
+								<dirty>-dirty</dirty>
+							</gitDescribe>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+
+			<!-- antrun plugin -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-antrun-plugin</artifactId>
+				<version>1.8</version>
+				<executions>
+					<execution>
+						<id>copy-artifact-noVersion</id>
+						<phase>package</phase>
+						<goals>
+							<goal>run</goal>
+						</goals>
+						<configuration>
+							<tasks>
+								<echo message="Copy file ${project.build.directory}/${project.artifactId}-${project.version}.jar to ${project.build.directory}/${project.artifactId}.jar .." />
+								<copy file="${project.build.directory}/${project.artifactId}-${project.version}.jar" tofile="${project.build.directory}/${project.artifactId}.jar" />
+							</tasks>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+
+		</plugins>
+	</build>
+
+	<!-- Repositories -->
+	<repositories>
+		<repository>
+			<id>spring-libs-release</id>
+			<name>Spring Libs Release</name>
+			<url>https://mavenrepo.schwab.com/nexus/content/repositories/spring-libs-release/</url>
+		</repository>
+		<repository>
+			<id>spring-milestones</id>
+			<name>Spring Milestones</name>
+			<url>https://mavenrepo.schwab.com/nexus/content/repositories/spring-milestones/</url>
+		</repository>
+		<repository>
+			<id>spring-release</id>
+			<name>Spring Release</name>
+			<url>https://mavenrepo.schwab.com/nexus/content/repositories/spring-release/</url>
+		</repository>
+		<repository>
+			<id>spring-snapshots</id>
+			<name>Spring Snapshots</name>
+			<url>https://mavenrepo.schwab.com/nexus/content/repositories/spring-snapshots/</url>
+		</repository>
+		<repository>
+			<id>releases</id>
+			<name>Schwab Public Releases</name>
+			<url>https://mavenrepo.schwab.com/nexus/content/repositories/releases/</url>
+		</repository>
+		<repository>
+			<id>snapshots</id>
+			<name>Schwab Public Snapshots</name>
+			<url>https://mavenrepo.schwab.com/nexus/content/repositories/snapshots/</url>
+		</repository>
+	</repositories>
+
+	<!-- Distribution Management -->
+	<distributionManagement>
+		<repository>
+			<id>releases</id>
+			<name>Schwab Public Releases</name>
+			<url>https://mavenrepo.schwab.com/nexus/content/repositories/releases/</url>
+		</repository>
+		<snapshotRepository>
+			<id>snapshots</id>
+			<name>Schwab Public Snapshots</name>
+			<url>https://mavenrepo.schwab.com/nexus/content/repositories/snapshots/</url>
+		</snapshotRepository>
+	</distributionManagement>
+
+</project>
