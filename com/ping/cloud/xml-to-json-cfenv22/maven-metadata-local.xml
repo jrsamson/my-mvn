@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+  <groupId>com.ping.cloud</groupId>
+  <artifactId>xml-to-json-cfenv22</artifactId>
+  <versioning>
+    <versions>
+      <version>0.0.5-SNAPSHOT</version>
+    </versions>
+    <lastUpdated>20210125055043</lastUpdated>
+  </versioning>
+</metadata>
