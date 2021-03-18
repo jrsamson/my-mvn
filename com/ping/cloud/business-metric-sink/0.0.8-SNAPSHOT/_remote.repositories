@@ -1,0 +1,6 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Thu Mar 18 17:00:52 MDT 2021
+business-metric-sink-0.0.8-SNAPSHOT-sources.jar>=
+business-metric-sink-0.0.8-SNAPSHOT-javadoc.jar>=
+business-metric-sink-0.0.8-SNAPSHOT.jar>=
+business-metric-sink-0.0.8-SNAPSHOT.pom>=

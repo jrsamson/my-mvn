@@ -59,6 +59,18 @@
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>
+
+<!--
+                <dependency>
+                    <groupId>io.pivotal.spring.cloud</groupId>
+                    <artifactId>spring-cloud-services-dependencies</artifactId>
+                    <version>2.1.2.RELEASE</version>
+                    <type>pom</type>
+                    <scope>import</scope>
+                </dependency>
+-->
+
+
 		</dependencies>
 	</dependencyManagement>
 
