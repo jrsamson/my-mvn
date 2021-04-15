@@ -1,4 +1,6 @@
 #NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
-#Thu Apr 15 06:19:50 MDT 2021
+#Thu Apr 15 06:49:16 MDT 2021
+mytask-2.3.2-SNAPSHOT-sources.jar>=
 mytask-2.3.2-SNAPSHOT.pom>=
+mytask-2.3.2-SNAPSHOT-javadoc.jar>=
 mytask-2.3.2-SNAPSHOT.jar>=
