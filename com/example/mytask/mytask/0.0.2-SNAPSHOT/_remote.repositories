@@ -1,6 +1,0 @@
-#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
-#Mon Dec 13 12:05:59 MST 2021
-mytask-0.0.2-SNAPSHOT.pom>=
-mytask-0.0.2-SNAPSHOT-sources.jar>=
-mytask-0.0.2-SNAPSHOT.jar>=
-mytask-0.0.2-SNAPSHOT-javadoc.jar>=
