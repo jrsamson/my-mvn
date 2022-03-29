@@ -1,0 +1,5 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Tue Mar 29 13:58:43 MDT 2022
+mytask-0.0.4-SNAPSHOT-metadata.jar>=
+mytask-0.0.4-SNAPSHOT.jar>=
+mytask-0.0.4-SNAPSHOT.pom>=
