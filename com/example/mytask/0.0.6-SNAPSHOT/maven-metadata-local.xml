@@ -3,7 +3,7 @@
   <groupId>com.example</groupId>
   <artifactId>mytask</artifactId>
   <versioning>
-    <lastUpdated>20220827122349</lastUpdated>
+    <lastUpdated>20220827132515</lastUpdated>
     <snapshot>
       <localCopy>true</localCopy>
     </snapshot>
@@ -12,17 +12,17 @@
         <classifier>metadata</classifier>
         <extension>jar</extension>
         <value>0.0.6-SNAPSHOT</value>
-        <updated>20220827122349</updated>
+        <updated>20220827132515</updated>
       </snapshotVersion>
       <snapshotVersion>
         <extension>jar</extension>
         <value>0.0.6-SNAPSHOT</value>
-        <updated>20220827122349</updated>
+        <updated>20220827132515</updated>
       </snapshotVersion>
       <snapshotVersion>
         <extension>pom</extension>
         <value>0.0.6-SNAPSHOT</value>
-        <updated>20220827122349</updated>
+        <updated>20220827132515</updated>
       </snapshotVersion>
     </snapshotVersions>
   </versioning>
