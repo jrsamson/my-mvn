@@ -1,6 +1,7 @@
 #NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
-#Mon Aug 29 08:52:00 MDT 2022
+#Mon Aug 29 09:48:05 MDT 2022
 mytime-0.0.1-SNAPSHOT.pom>=
 mytime-0.0.1-SNAPSHOT-sources.jar>=
+mytime-0.0.1-SNAPSHOT-metadata.jar>=
 mytime-0.0.1-SNAPSHOT.jar>=
 mytime-0.0.1-SNAPSHOT-javadoc.jar>=

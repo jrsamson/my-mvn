@@ -39,6 +39,8 @@
             <optional>true</optional>
         </dependency>
 
+
+
     </dependencies>
 
     <build>
@@ -47,24 +49,39 @@
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-app-starter-doc-maven-plugin</artifactId>
             </plugin>
+<!--            <plugin>-->
+<!--                <groupId>org.springframework.cloud.stream.app.plugin</groupId>-->
+<!--                <artifactId>spring-cloud-stream-app-maven-plugin</artifactId>-->
+<!--                <configuration>-->
+<!--                    <generatedProjectHome>${session.executionRootDirectory}/apps</generatedProjectHome>-->
+<!--                    <generatedProjectVersion>${project.version}</generatedProjectVersion>-->
+<!--                    <bom>-->
+<!--                        <name>scs-bom</name>-->
+<!--                        <groupId>org.springframework.cloud.task.app</groupId>-->
+<!--                        <artifactId>timestamp-task-app-dependencies</artifactId>-->
+<!--                        <version>${project.version}</version>-->
+<!--                    </bom>-->
+<!--                    <generatedApps>-->
+<!--                        <timestamp-task />-->
+<!--                    </generatedApps>-->
+<!--                    <enableContainerImageMetadata>true</enableContainerImageMetadata>-->
+<!--                </configuration>-->
+<!--            </plugin>-->
             <plugin>
-                <groupId>org.springframework.cloud.stream.app.plugin</groupId>
-                <artifactId>spring-cloud-stream-app-maven-plugin</artifactId>
-                <configuration>
-                    <generatedProjectHome>${session.executionRootDirectory}/apps</generatedProjectHome>
-                    <generatedProjectVersion>${project.version}</generatedProjectVersion>
-                    <bom>
-                        <name>scs-bom</name>
-                        <groupId>org.springframework.cloud.task.app</groupId>
-                        <artifactId>timestamp-task-app-dependencies</artifactId>
-                        <version>${project.version}</version>
-                    </bom>
-                    <generatedApps>
-                        <timestamp-task />
-                    </generatedApps>
-                    <enableContainerImageMetadata>true</enableContainerImageMetadata>
-                </configuration>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-app-starter-metadata-maven-plugin</artifactId>
+                <version>2.0.0.RELEASE</version>
+                <executions>
+                    <execution>
+                        <id>aggregate-metadata</id>
+                        <phase>compile</phase>
+                        <goals>
+                            <goal>aggregate-metadata</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
+
         </plugins>
     </build>
 </project>
