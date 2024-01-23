@@ -4,8 +4,8 @@
   <artifactId>timestamp-task</artifactId>
   <versioning>
     <versions>
-      <version>3.0.0.BUILD-SNAPSHOT</version>
+      <version>3.1.1-SNAPSHOT</version>
     </versions>
-    <lastUpdated>20200423230435</lastUpdated>
+    <lastUpdated>20240123172918</lastUpdated>
   </versioning>
 </metadata>
