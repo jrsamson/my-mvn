@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+  <groupId>com.example</groupId>
+  <artifactId>simple-timeStamp-task</artifactId>
+  <versioning>
+    <release>1.10.21</release>
+    <versions>
+      <version>1.9.1</version>
+      <version>1.10.21</version>
+    </versions>
+    <lastUpdated>20250622130341</lastUpdated>
+  </versioning>
+</metadata>
